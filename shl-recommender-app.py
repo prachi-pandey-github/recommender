@@ -181,7 +181,7 @@ def recommend_assessments(job_description, max_results=10):
     # Get recommendations from OpenAI
     try:
         response = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="",
             messages=[{"role": "system", "content": "You are an HR assessment recommendation expert."},
                       {"role": "user", "content": prompt}],
             response_format={"type": "json_object"}
