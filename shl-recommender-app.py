@@ -15,9 +15,9 @@ skills = st.text_area("Key Skills (comma separated)")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
 def get_recommendations(prompt):
-    url = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent"
+    url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash-latest:generateContent"
     headers = {"Content-Type": "application/json"}
-    params = {"key": os.getenv("GEMINI_API_KEY")}  # or replace with your actual key for testing
+    params = {"key": os.getenv("GEMINI_API_KEY")}  # or replace with actual key during testing
     data = {
         "contents": [{"parts": [{"text": prompt}]}]
     }
@@ -26,7 +26,10 @@ def get_recommendations(prompt):
 
     if response.status_code == 200:
         reply = response.json()
-        return reply["candidates"][0]["content"]["parts"][0]["text"]
+        try:
+            return reply["candidates"][0]["content"]["parts"][0]["text"]
+        except (KeyError, IndexError):
+            return "No valid response received from Gemini."
     else:
         return f"Error: {response.status_code} - {response.text}"
 
