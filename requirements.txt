@@ -1,5 +1,10 @@
 streamlit
-openai
 requests
-beautifulsoup4
 pandas
+openai
+python-dotenv
+fastapi
+uvicorn
+gradio
+pydantic
+
