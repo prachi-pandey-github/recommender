@@ -15,23 +15,19 @@ skills = st.text_area("Key Skills (comma separated)")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
 def get_recommendations(prompt):
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent"
-    headers = {"Content-Type": "application/json"}
-    params = {"key": os.getenv("GEMINI_API_KEY")}  # or replace with actual key during testing
-    data = {
-        "contents": [{"parts": [{"text": prompt}]}]
-    }
+    def get_recommendations(prompt):
+    try:
+        # Replace this with your actual Flask API URL
+        api_url = "https://recommender-flask-api.onrender.com/get-recommendation"
+        response = requests.get(api_url, params={"query": prompt})
+        
+        if response.status_code == 200:
+            return response.json().get("recommendation", "No recommendation found.")
+        else:
+            return f"Error: {response.status_code} - {response.text}"
+    except Exception as e:
+        return f"Something went wrong: {str(e)}"
 
-    response = requests.post(url, headers=headers, params=params, json=data)
-
-    if response.status_code == 200:
-        reply = response.json()
-        try:
-            return reply["candidates"][0]["content"]["parts"][0]["text"]
-        except (KeyError, IndexError):
-            return "No valid response received from Gemini."
-    else:
-        return f"Error: {response.status_code} - {response.text}"
 
 
 # Streamlit UI
