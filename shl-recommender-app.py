@@ -15,7 +15,7 @@ skills = st.text_area("Key Skills (comma separated)")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
 def get_recommendations(prompt):
-    url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash-latest:generateContent"
+    url = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-thinking-exp-01-21:generateContent"
     headers = {"Content-Type": "application/json"}
     params = {"key": os.getenv("GEMINI_API_KEY")}  # or replace with actual key during testing
     data = {
@@ -32,6 +32,7 @@ def get_recommendations(prompt):
             return "No valid response received from Gemini."
     else:
         return f"Error: {response.status_code} - {response.text}"
+
 
 # Streamlit UI
 if st.button("Get Recommendations"):
