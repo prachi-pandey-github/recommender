@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import json
 import pandas as pd
-from openai import OpenAI
+import openai
 import os
 from dotenv import load_dotenv
 import re
