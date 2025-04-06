@@ -8,3 +8,7 @@ uvicorn
 gradio
 pydantic
 google-generativeai
+Flask
+requests
+python-dotenv
+
