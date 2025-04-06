@@ -184,7 +184,7 @@ def recommend_assessments(job_description, max_results=10):
             model="gpt-3.5-turbo",
             messages=[{"role": "system", "content": "You are an HR assessment recommendation expert."},
                       {"role": "user", "content": prompt}],
-            response_format={"type": "json_object"}
+            
         )
         
         # Extract and parse JSON response
