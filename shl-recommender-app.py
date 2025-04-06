@@ -15,7 +15,7 @@ skills = st.text_area("Key Skills (comma separated)")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
 def get_recommendations(prompt):
-    url = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent"
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
     headers = {"Content-Type": "application/json"}
     params = {"key": os.getenv("GEMINI_API_KEY")}
     data = {
