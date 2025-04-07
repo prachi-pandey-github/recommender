@@ -14,19 +14,18 @@ role = st.text_input("Job Role")
 skills = st.text_area("Key Skills (comma separated)")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
-def get_recommendations(prompt):
+
     def get_recommendations(prompt):
-    try:
-        # Replace this with your actual Flask API URL
-        api_url = "https://recommender-flask-api.onrender.com/get-recommendation"
-        response = requests.get(api_url, params={"query": prompt})
-        
-        if response.status_code == 200:
-            return response.json().get("recommendation", "No recommendation found.")
-        else:
-            return f"Error: {response.status_code} - {response.text}"
-    except Exception as e:
-        return f"Something went wrong: {str(e)}"
+        try:
+            api_url = "https://recommender-flask-api.onrender.com/get-recommendation"
+            response = requests.get(api_url, params={"query": prompt})
+            
+            if response.status_code == 200:
+                return response.json().get("recommendation", "No recommendation found.")
+            else:
+                return f"Error: {response.status_code} - {response.text}"
+        except Exception as e:
+            return f"Something went wrong: {str(e)}"
 
 
 
