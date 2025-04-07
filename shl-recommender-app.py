@@ -18,7 +18,6 @@ def get_recommendations(prompt):
     try:
         api_url = "https://recommender-flask-api.onrender.com/get-recommendation"
         response = requests.get(api_url, params={"query": prompt})
-            
         if response.status_code == 200:
             return response.json().get("recommendation", "No recommendation found.")
         else:
