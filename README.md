@@ -31,7 +31,7 @@ The system analyzes the input and recommends the most relevant SHL assessment by
 ![Homepage](https://github.com/prachi-pandey-github/recommender/blob/0d1bac694bf622c56525329fd0a353e0f018f138/SHLapp.PNG)
 *Homepage of the recommender system*
 
-![Results](https://github.com/prachi-pandey-github/recommender/blob/0d1bac694bf622c56525329fd0a353e0f018f138/output.png)
+![Results](https://github.com/prachi-pandey-github/recommender/blob/455256abec770650e57da4a2a442a5091fd0474c/output.PNG)
 *Example of recommended SHL assignments based on input*
 
 
