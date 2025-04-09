@@ -11,7 +11,7 @@ st.title("📊 SHL Assessment Recommender")
 st.markdown("Enter role-related details and receive SHL assessment suggestions.")
 
 role = st.text_input("Job Role")
-skills = st.text_area("Key Skills (comma separated)")
+skills = st.text_area("Enter Job Discription")
 experience = st.slider("Years of Experience", 0, 30, 3)
 
 def get_recommendations(prompt):
