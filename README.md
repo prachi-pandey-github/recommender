@@ -26,7 +26,7 @@ The system analyzes the input and recommends the most relevant SHL assessment by
 
 ## 📷 Screenshots
 
-Include relevant screenshots of the application below:
+
 
 ![Homepage](screenshots/homepage.png)
 *Homepage of the recommender system*
@@ -67,13 +67,8 @@ cd recommender
 pip install -r requirements.txt
 ```
 
-### 3. Run the Streamlit App
 
-```bash
-streamlit run streamlit-app.py
-```
-
-### 4. Open in Browser
+### 3. Open in Browser
 
 Go to `https://recommender-bdrx58rvexyfno6ujcrsvf.streamlit.app/` in your browser to interact with the app.
 
