@@ -28,10 +28,10 @@ The system analyzes the input and recommends the most relevant SHL assessment by
 
 
 
-![Homepage](SHLapp.png)
+![Homepage](recommender/SHLapp.PNG)
 *Homepage of the recommender system*
 
-![Results](output.png)
+![Results](recommender/output.png)
 *Example of recommended SHL assignments based on input*
 
 
