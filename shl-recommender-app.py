@@ -17,7 +17,12 @@ experience = st.slider("Years of Experience", 0, 30, 3)
 def get_recommendations(prompt):
     try:
         api_url = "https://recommender-flask-api.onrender.com/get-recommendation"
-        response = requests.get(api_url, params={"query": prompt})
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+            "Accept": "application/json",
+            "Accept-Language": "en-US,en;q=0.9"
+        }
+        response = requests.get(api_url, params={"query": prompt}, headers=headers)
         if response.status_code == 200:
             return response.json().get("response", "No recommendation found.")
         else:
